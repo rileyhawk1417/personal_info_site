@@ -1,0 +1,40 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+---
+
+	<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+		<main>
+			<h1 class='text-center'>Hello Welcome to my site :D</h1>
+			<div>
+				<section id='bio'>
+					Hello my name is Sean and am a Programmer
+					I like to code anything I can get my hands on, am a fan
+					of open source and meeting new people to learn skills.
+					Currently learning Astro framework for building websites,
+					am also a contributer at <a href='https://github.com/AppFlowy-IO/AppFlowy'>AppFlowy</a>.
+					When am not coding I like to make 3d art work, which I post <a href='https://www.instagram.com/seanrileyhawkins_/'>here </a>on my Instagram
+				</section>
+				<!-- TODO: When done with school add it in here -->
+				<section id='hobbies'>
+				<h3>What I love doing:</h3>
+				<ul>
+					<li>Making 3d objects with blender</li>
+					<li>Solving problems where I can</li>
+					<li>Lofi Music</li>
+					<li>Photography</li>
+					<li>Learning new things</li>
+				</ul>
+				</section>
+				<section id='findMe'>
+				<h3>Where to find me:</h3>
+					<ul>
+						<li><a href='https://www.instagram.com/seanrileyhawkins_/'>Instagram</a></li>
+						<li><a href='https://github.com/rileyhawk1417'>Github</a></li>
+					</ul>
+				</section>
+			</div>
+		</main>
+	</Layout>

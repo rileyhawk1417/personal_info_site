@@ -1,0 +1,37 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Layout from './Layout.astro'
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		date: string;
+		updatedAt?: string;
+		cover_image?: string;
+	};
+}
+
+const {
+	content: { title, description, date, updatedAt, cover_image },
+} = Astro.props;
+---
+
+<Layout title={title} description={description}>
+		<main>
+			<article>
+				{cover_image && <img width={720} height={360} src={cover_image} alt="" />}
+				<h1 class="title border-b">{title}</h1>
+				{date && <time>{date}</time>}
+				{
+					updatedAt && (
+						<div>
+							Last updated on <time>{updatedAt}</time>
+						</div>
+					)
+				}
+				<slot />
+			</article>
+		</main>
+</Layout>
