@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Layout from './Layout.astro'
+import TagLayout from '../components/TagLayout.astro'
 
 export interface Props {
 	content: {
@@ -10,20 +11,26 @@ export interface Props {
 		date: string;
 		updatedAt?: string;
 		cover_image?: string;
+		tags?: [];
 	};
 }
 
 const {
-	content: { title, description, date, updatedAt, cover_image },
+	content: { title, description, date, updatedAt, cover_image, tags },
 } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
-		<main>
 			<article>
 				{cover_image && <img width={720} height={360} src={cover_image} alt="" />}
-				<h1 class="title border-b">{title}</h1>
-				{date && <time>{date}</time>}
+				<h1 class="title text-2xl">{title}</h1>
+				<div class='border border-zinc-400 m-4'></div>
+				<span class='mb-4'>
+				{date && <time class='text-md font-bold '>{date}</time>}
+				{tags.map((tag) => (
+					<TagLayout className='ml-4'>{tag}</TagLayout>
+				))}
+				</span>
 				{
 					updatedAt && (
 						<div>
@@ -33,5 +40,4 @@ const {
 				}
 				<slot />
 			</article>
-		</main>
 </Layout>
