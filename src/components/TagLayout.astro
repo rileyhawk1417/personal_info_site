@@ -1,11 +1,13 @@
 ---
 export interface Props {
 		className?: string
+		link?: string
 	}
-const {className = ''} = Astro.props
+const {className = '', link} = Astro.props
 ---
 
-
+<a href={link}>
 <span class={`${className} border border-white p-0.5 mt-4 rounded-md shadow-md dark:bg-zinc-300 dark:text-zinc-800 bg-zinc-400`} >
 <slot />
 </span>
+</a>

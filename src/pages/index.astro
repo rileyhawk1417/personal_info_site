@@ -2,13 +2,27 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro'
+import { Image, Picture } from '@astrojs/image/components';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 ---
 
 	<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+				<!-- TODO: Add something to fill the gap(3d Model?) -->
 		<main>
-			<h1 class='text-center'>Hello Welcome to my site :D</h1>
 			<div>
+			<section id='name' class='p-4 flex flex-row justify-evenly'>
+			<span>
+				<h2>
+					Sean Riley Hawkins
+				</h2>
+				<p>
+				Programmer/Coder
+				</p>
+				</span>
+				<span >
+				<Image class='h-32 w-32 rounded-full' src='https://avatars.githubusercontent.com/u/42723553?v=4' width='460' height='460' alt='profile image' />
+				</span>
+			</section>
 				<section id='bio'>
 					Hello my name is Sean and am a Programmer
 					I like to code anything I can get my hands on, am a fan
@@ -16,6 +30,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 					Currently learning Astro framework for building websites,
 					am also a contributer at <a href='https://github.com/AppFlowy-IO/AppFlowy'>AppFlowy</a>.
 					When am not coding I like to make 3d art work, which I post <a href='https://www.instagram.com/seanrileyhawkins_/'>here </a>on my Instagram
+					<span>
+					<h3>Info</h3>
+					<ul class='list-none'>
+						<li><span class='dates'>2000</span> Born in Hwange, Zimbabwe </li>
+						<li><span class='dates'>2020 to present</span> Studying Diploma in ICT at Trust Academy </li>
+					</ul>
+					</span>
 				</section>
 				<!-- TODO: When done with school add it in here -->
 				<section id='hobbies'>
@@ -38,3 +59,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 			</div>
 		</main>
 	</Layout>
+
+	<style>
+	.dates{
+			font-weight: bold;
+		}
+	</style>

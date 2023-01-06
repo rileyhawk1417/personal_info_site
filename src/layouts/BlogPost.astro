@@ -23,12 +23,13 @@ const {
 <Layout title={title} description={description}>
 			<article>
 				{cover_image && <img width={720} height={360} src={cover_image} alt="" />}
+				<a href='/' class='w-full bg-sky-200'>Go Back</a>
 				<h1 class="title text-2xl">{title}</h1>
 				<div class='border border-zinc-400 m-4'></div>
 				<span class='mb-4'>
 				{date && <time class='text-md font-bold '>{date}</time>}
 				{tags.map((tag) => (
-					<TagLayout className='ml-4'>{tag}</TagLayout>
+					<TagLayout link={`/tags/${tag.toLowerCase()}`} className='ml-4'>{tag}</TagLayout>
 				))}
 				</span>
 				{

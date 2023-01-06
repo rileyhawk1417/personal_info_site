@@ -1,6 +1,7 @@
 ---
 import DropDownMenu from './DropDownMenu'
 import LightDarkToggle from './LightDarkToggle'
+import {SITE_TITLE} from '../config'
 
 const links=[
 	{label: 'Home', href:'/'},
@@ -18,19 +19,19 @@ allPosts.map(post =>{
 	})
 
 ---
-<header>
+<header class='sticky top-0'>
 	<>
-		<div class=' bg-neutral-200 shadow-md p-4 rounded-md mx-auto max-w-3xl'>
+		<div class='sm:flex sm:flex-row  items-center justify-evenly md:flex md:flex-row bg-neutral-200 shadow-md p-4 rounded-md mx-auto max-w-3xl'>
+			<a href='/' class='text-neutral-600 hover:text-sky-700 hover:shadow-xl font-bold'>{SITE_TITLE}</a>
 			<nav class=' flex flex-row justify-evenly items-center'>
-			<a href='/' class='text-neutral-600 hover:text-sky-700 hover:shadow-xl '>Sean</a>
 			<a href='/blog' class='hidden md:flex text-neutral-600 hover:text-zinc-400 hover:shadow-xl '>Blogs</a>
-			<DropDownMenu client:visible tags={Array.from(allTags)} />
 			{
 				links.map((linker) => (
 				<a href={linker.href} class='hidden md:flex hover:text-zinc-400 hover:shadow-xl text-neutral-600'>{linker.label}</a>
 				))
 			}
 			</nav>
+			<DropDownMenu client:visible menuItems={Array.from(links)} tags={Array.from(allTags)} />
 			<LightDarkToggle client:visible />
 		</div>
 	</>

@@ -17,7 +17,7 @@ const DropDownMenuItem = ({ href, children }: Props) => {
         <a
           href={href}
           className={classNames(
-            active ? "bg-orange-200 dark:bg-zinc-700" : "",
+            active ? "bg-sky-200 dark:bg-zinc-700" : "",
             "block px-4 y-2 text-sm"
           )}
         >
