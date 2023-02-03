@@ -5,7 +5,7 @@ import DropDownMenuItem from "./DropDownMenuItem";
 
 interface Props {
   tags: string[];
-  menuItems: string[]
+  menuItems: string[];
 }
 
 const DropDownMenu = ({ tags, menuItems }: Props) => {
@@ -29,18 +29,16 @@ const DropDownMenu = ({ tags, menuItems }: Props) => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md border border-zinc-400 dark:border-zinc-700 bg-sky-50 dark:bg-zinc-800 shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none divide-zinc-400 dark:divide-zinc-700">
-        <div className="hidden sm:block sm:py-1">
-        <div className="px-3 py-2 uppercase font-bold text-xs">
-        Menu
-        </div>
-          {menuItems.map((link) => {
-            return (
-              <DropDownMenuItem key={link.label} href={link.href}>
-              {link.label}
-              </DropDownMenuItem>
-            )
-          })}
-        </div>
+          <div className="hidden sm:block sm:py-1">
+            <div className="px-3 py-2 uppercase font-bold text-xs">Menu</div>
+            {menuItems.map((link) => {
+              return (
+                <DropDownMenuItem key={link.label} href={link.href}>
+                  {link.label}
+                </DropDownMenuItem>
+              );
+            })}
+          </div>
           <div className="py-1">
             <div className="px-3 py-2 uppercase font-bold text-xs">
               Blog Categories
